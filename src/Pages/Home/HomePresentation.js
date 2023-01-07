@@ -8,10 +8,8 @@ function HomePresentation() {
 
   useEffect(() => {
     fetchWeatherDetails(selectedCity);
-    console.log("log1");
   }, []);
   const changeCity = (cityName) => {
-    console.log("log2");
     fetchWeatherDetails(cityName);
     setSelectedCity(cityName);
   };
