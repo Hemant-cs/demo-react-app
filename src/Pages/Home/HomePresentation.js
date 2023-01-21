@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Table from "../../components/Table/Table";
 import NavBar from "../../components/NavBar/NavBar";
+import Card from "../../components/Cards/Card";
 
 function HomePresentation() {
   const [weatherDetails, setWeatherDetails] = useState({});
   const [selectedCity, setSelectedCity] = useState("Indore");
+
+  const topCityArray = ["Delhi", "varanasi", "Lucknow"];
 
   useEffect(() => {
     fetchWeatherDetails(selectedCity);
@@ -35,6 +38,9 @@ function HomePresentation() {
     <>
       <NavBar selectedCity={selectedCity} changeCity={changeCity} />
       <Table weatherDetails={weatherDetails} />
+      {topCityArray.forEach((element) => {
+        <Card />
+      })}
     </>
   );
 }
